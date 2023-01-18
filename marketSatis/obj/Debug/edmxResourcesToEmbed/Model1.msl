@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stokdbModelStoreContainer" CdmEntityContainer="stokdbEntities">
+    <EntitySetMapping Name="Saticis">
+      <EntityTypeMapping TypeName="stokdbModel.Saticis">
+        <MappingFragment StoreEntitySet="Saticis">
+          <ScalarProperty Name="SaticiID" ColumnName="SaticiID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uruns">
+      <EntityTypeMapping TypeName="stokdbModel.Uruns">
+        <MappingFragment StoreEntitySet="Uruns">
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

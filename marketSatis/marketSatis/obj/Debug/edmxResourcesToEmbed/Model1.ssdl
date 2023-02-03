@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stokdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Girdiis">
+    <Key>
+      <PropertyRef Name="GirdiiID" />
+    </Key>
+    <Property Name="GirdiiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunID" Type="int" />
+    <Property Name="GirdiiIrsaliye" Type="int" />
+    <Property Name="GirdiiFiyat" Type="int" />
+    <Property Name="GirdiiMiktar" Type="int" />
+    <Property Name="GirdiiTarih" Type="nvarchar(max)" />
+    <Property Name="GirdiiTedarik" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Musteris">
+    <Key>
+      <PropertyRef Name="MusteriID" />
+    </Key>
+    <Property Name="MusteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar(max)" />
+    <Property Name="Soyadi" Type="nvarchar(max)" />
+    <Property Name="MusteriBorc" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sales">
+    <Key>
+      <PropertyRef Name="SatisID" />
+    </Key>
+    <Property Name="SatisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunID" Type="int" Nullable="false" />
+    <Property Name="UrunFiyat" Type="int" Nullable="false" />
+    <Property Name="UrunMiktar" Type="int" Nullable="false" />
+    <Property Name="UrunTarih" Type="nvarchar(max)" />
+    <Property Name="Ver_Pes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Saticis">
+    <Key>
+      <PropertyRef Name="SaticiID" />
+    </Key>
+    <Property Name="SaticiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Stocks">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunID" Type="int" Nullable="false" />
+    <Property Name="UrunMiktarı" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tedarikcis">
+    <Key>
+      <PropertyRef Name="TedarikciID" />
+    </Key>
+    <Property Name="TedarikciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TedarikciAd" Type="nvarchar(max)" />
+    <Property Name="TedarikciSoyad" Type="nvarchar(max)" />
+    <Property Name="TedarikciBorc" Type="int" Nullable="false" />
+    <Property Name="IrsaliyeNo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Uruns">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunAd" Type="nvarchar(max)" />
+    <Property Name="UrunFiyat" Type="int" Nullable="false" />
+    <Property Name="UrunMiktar" Type="int" Nullable="false" />
+    <Property Name="UrunBarkod" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="stokdbModelStoreContainer">
+    <EntitySet Name="Girdiis" EntityType="Self.Girdiis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Musteris" EntityType="Self.Musteris" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Saticis" EntityType="Self.Saticis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stocks" EntityType="Self.Stocks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tedarikcis" EntityType="Self.Tedarikcis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Uruns" EntityType="Self.Uruns" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

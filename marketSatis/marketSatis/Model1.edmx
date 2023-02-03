@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="stokdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Girdiis">
+          <Key>
+            <PropertyRef Name="GirdiiID" />
+          </Key>
+          <Property Name="GirdiiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UrunID" Type="int" />
+          <Property Name="GirdiiIrsaliye" Type="int" />
+          <Property Name="GirdiiFiyat" Type="int" />
+          <Property Name="GirdiiMiktar" Type="int" />
+          <Property Name="GirdiiTarih" Type="nvarchar(max)" />
+          <Property Name="GirdiiTedarik" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Musteris">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Adi" Type="nvarchar(max)" />
+          <Property Name="Soyadi" Type="nvarchar(max)" />
+          <Property Name="MusteriBorc" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sales">
+          <Key>
+            <PropertyRef Name="SatisID" />
+          </Key>
+          <Property Name="SatisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UrunID" Type="int" Nullable="false" />
+          <Property Name="UrunFiyat" Type="int" Nullable="false" />
+          <Property Name="UrunMiktar" Type="int" Nullable="false" />
+          <Property Name="UrunTarih" Type="nvarchar(max)" />
+          <Property Name="Ver_Pes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Saticis">
+          <Key>
+            <PropertyRef Name="SaticiID" />
+          </Key>
+          <Property Name="SaticiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Stocks">
+          <Key>
+            <PropertyRef Name="StockID" />
+          </Key>
+          <Property Name="StockID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UrunID" Type="int" Nullable="false" />
+          <Property Name="UrunMiktarı" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tedarikcis">
+          <Key>
+            <PropertyRef Name="TedarikciID" />
+          </Key>
+          <Property Name="TedarikciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TedarikciAd" Type="nvarchar(max)" />
+          <Property Name="TedarikciSoyad" Type="nvarchar(max)" />
+          <Property Name="TedarikciBorc" Type="int" Nullable="false" />
+          <Property Name="IrsaliyeNo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Uruns">
+          <Key>
+            <PropertyRef Name="UrunID" />
+          </Key>
+          <Property Name="UrunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UrunAd" Type="nvarchar(max)" />
+          <Property Name="UrunFiyat" Type="int" Nullable="false" />
+          <Property Name="UrunMiktar" Type="int" Nullable="false" />
+          <Property Name="UrunBarkod" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="stokdbModelStoreContainer">
+          <EntitySet Name="Girdiis" EntityType="Self.Girdiis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Musteris" EntityType="Self.Musteris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Saticis" EntityType="Self.Saticis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stocks" EntityType="Self.Stocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tedarikcis" EntityType="Self.Tedarikcis" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uruns" EntityType="Self.Uruns" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="stokdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Girdiis">
+          <Key>
+            <PropertyRef Name="GirdiiID" />
+          </Key>
+          <Property Name="GirdiiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrunID" Type="Int32" />
+          <Property Name="GirdiiIrsaliye" Type="Int32" />
+          <Property Name="GirdiiFiyat" Type="Int32" />
+          <Property Name="GirdiiMiktar" Type="Int32" />
+          <Property Name="GirdiiTarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GirdiiTedarik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Musteris">
+          <Key>
+            <PropertyRef Name="MusteriID" />
+          </Key>
+          <Property Name="MusteriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Adi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Soyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MusteriBorc" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sales">
+          <Key>
+            <PropertyRef Name="SatisID" />
+          </Key>
+          <Property Name="SatisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrunID" Type="Int32" Nullable="false" />
+          <Property Name="UrunFiyat" Type="Int32" Nullable="false" />
+          <Property Name="UrunMiktar" Type="Int32" Nullable="false" />
+          <Property Name="UrunTarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ver_Pes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Saticis">
+          <Key>
+            <PropertyRef Name="SaticiID" />
+          </Key>
+          <Property Name="SaticiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Stocks">
+          <Key>
+            <PropertyRef Name="StockID" />
+          </Key>
+          <Property Name="StockID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrunID" Type="Int32" Nullable="false" />
+          <Property Name="UrunMiktarı" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tedarikcis">
+          <Key>
+            <PropertyRef Name="TedarikciID" />
+          </Key>
+          <Property Name="TedarikciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TedarikciAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TedarikciSoyad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TedarikciBorc" Type="Int32" Nullable="false" />
+          <Property Name="IrsaliyeNo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Uruns">
+          <Key>
+            <PropertyRef Name="UrunID" />
+          </Key>
+          <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrunAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UrunFiyat" Type="Int32" Nullable="false" />
+          <Property Name="UrunMiktar" Type="Int32" Nullable="false" />
+          <Property Name="UrunBarkod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="stokdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Girdiis" EntityType="Self.Girdiis" />
+          <EntitySet Name="Musteris" EntityType="Self.Musteris" />
+          <EntitySet Name="Sales" EntityType="Self.Sales" />
+          <EntitySet Name="Saticis" EntityType="Self.Saticis" />
+          <EntitySet Name="Stocks" EntityType="Self.Stocks" />
+          <EntitySet Name="Tedarikcis" EntityType="Self.Tedarikcis" />
+          <EntitySet Name="Uruns" EntityType="Self.Uruns" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="stokdbModelStoreContainer" CdmEntityContainer="stokdbEntities">
+          <EntitySetMapping Name="Girdiis">
+            <EntityTypeMapping TypeName="stokdbModel.Girdiis">
+              <MappingFragment StoreEntitySet="Girdiis">
+                <ScalarProperty Name="GirdiiID" ColumnName="GirdiiID" />
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+                <ScalarProperty Name="GirdiiIrsaliye" ColumnName="GirdiiIrsaliye" />
+                <ScalarProperty Name="GirdiiFiyat" ColumnName="GirdiiFiyat" />
+                <ScalarProperty Name="GirdiiMiktar" ColumnName="GirdiiMiktar" />
+                <ScalarProperty Name="GirdiiTarih" ColumnName="GirdiiTarih" />
+                <ScalarProperty Name="GirdiiTedarik" ColumnName="GirdiiTedarik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Musteris">
+            <EntityTypeMapping TypeName="stokdbModel.Musteris">
+              <MappingFragment StoreEntitySet="Musteris">
+                <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+                <ScalarProperty Name="Adi" ColumnName="Adi" />
+                <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+                <ScalarProperty Name="MusteriBorc" ColumnName="MusteriBorc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sales">
+            <EntityTypeMapping TypeName="stokdbModel.Sales">
+              <MappingFragment StoreEntitySet="Sales">
+                <ScalarProperty Name="SatisID" ColumnName="SatisID" />
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+                <ScalarProperty Name="UrunFiyat" ColumnName="UrunFiyat" />
+                <ScalarProperty Name="UrunMiktar" ColumnName="UrunMiktar" />
+                <ScalarProperty Name="UrunTarih" ColumnName="UrunTarih" />
+                <ScalarProperty Name="Ver_Pes" ColumnName="Ver_Pes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Saticis">
+            <EntityTypeMapping TypeName="stokdbModel.Saticis">
+              <MappingFragment StoreEntitySet="Saticis">
+                <ScalarProperty Name="SaticiID" ColumnName="SaticiID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stocks">
+            <EntityTypeMapping TypeName="stokdbModel.Stocks">
+              <MappingFragment StoreEntitySet="Stocks">
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+                <ScalarProperty Name="UrunMiktarı" ColumnName="UrunMiktarı" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tedarikcis">
+            <EntityTypeMapping TypeName="stokdbModel.Tedarikcis">
+              <MappingFragment StoreEntitySet="Tedarikcis">
+                <ScalarProperty Name="TedarikciID" ColumnName="TedarikciID" />
+                <ScalarProperty Name="TedarikciAd" ColumnName="TedarikciAd" />
+                <ScalarProperty Name="TedarikciSoyad" ColumnName="TedarikciSoyad" />
+                <ScalarProperty Name="TedarikciBorc" ColumnName="TedarikciBorc" />
+                <ScalarProperty Name="IrsaliyeNo" ColumnName="IrsaliyeNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uruns">
+            <EntityTypeMapping TypeName="stokdbModel.Uruns">
+              <MappingFragment StoreEntitySet="Uruns">
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+                <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+                <ScalarProperty Name="UrunFiyat" ColumnName="UrunFiyat" />
+                <ScalarProperty Name="UrunMiktar" ColumnName="UrunMiktar" />
+                <ScalarProperty Name="UrunBarkod" ColumnName="UrunBarkod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

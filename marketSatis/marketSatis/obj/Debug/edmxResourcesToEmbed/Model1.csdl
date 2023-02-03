@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="stokdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Girdiis">
+    <Key>
+      <PropertyRef Name="GirdiiID" />
+    </Key>
+    <Property Name="GirdiiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" />
+    <Property Name="GirdiiIrsaliye" Type="Int32" />
+    <Property Name="GirdiiFiyat" Type="Int32" />
+    <Property Name="GirdiiMiktar" Type="Int32" />
+    <Property Name="GirdiiTarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GirdiiTedarik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Musteris">
+    <Key>
+      <PropertyRef Name="MusteriID" />
+    </Key>
+    <Property Name="MusteriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Adi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Soyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MusteriBorc" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sales">
+    <Key>
+      <PropertyRef Name="SatisID" />
+    </Key>
+    <Property Name="SatisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" Nullable="false" />
+    <Property Name="UrunFiyat" Type="Int32" Nullable="false" />
+    <Property Name="UrunMiktar" Type="Int32" Nullable="false" />
+    <Property Name="UrunTarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ver_Pes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Saticis">
+    <Key>
+      <PropertyRef Name="SaticiID" />
+    </Key>
+    <Property Name="SaticiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Stocks">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" Nullable="false" />
+    <Property Name="UrunMiktarı" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tedarikcis">
+    <Key>
+      <PropertyRef Name="TedarikciID" />
+    </Key>
+    <Property Name="TedarikciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TedarikciAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TedarikciSoyad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TedarikciBorc" Type="Int32" Nullable="false" />
+    <Property Name="IrsaliyeNo" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Uruns">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UrunFiyat" Type="Int32" Nullable="false" />
+    <Property Name="UrunMiktar" Type="Int32" Nullable="false" />
+    <Property Name="UrunBarkod" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="stokdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Girdiis" EntityType="Self.Girdiis" />
+    <EntitySet Name="Musteris" EntityType="Self.Musteris" />
+    <EntitySet Name="Sales" EntityType="Self.Sales" />
+    <EntitySet Name="Saticis" EntityType="Self.Saticis" />
+    <EntitySet Name="Stocks" EntityType="Self.Stocks" />
+    <EntitySet Name="Tedarikcis" EntityType="Self.Tedarikcis" />
+    <EntitySet Name="Uruns" EntityType="Self.Uruns" />
+  </EntityContainer>
+</Schema>

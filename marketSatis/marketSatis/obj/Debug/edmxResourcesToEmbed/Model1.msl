@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stokdbModelStoreContainer" CdmEntityContainer="stokdbEntities">
+    <EntitySetMapping Name="Girdiis">
+      <EntityTypeMapping TypeName="stokdbModel.Girdiis">
+        <MappingFragment StoreEntitySet="Girdiis">
+          <ScalarProperty Name="GirdiiID" ColumnName="GirdiiID" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="GirdiiIrsaliye" ColumnName="GirdiiIrsaliye" />
+          <ScalarProperty Name="GirdiiFiyat" ColumnName="GirdiiFiyat" />
+          <ScalarProperty Name="GirdiiMiktar" ColumnName="GirdiiMiktar" />
+          <ScalarProperty Name="GirdiiTarih" ColumnName="GirdiiTarih" />
+          <ScalarProperty Name="GirdiiTedarik" ColumnName="GirdiiTedarik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Musteris">
+      <EntityTypeMapping TypeName="stokdbModel.Musteris">
+        <MappingFragment StoreEntitySet="Musteris">
+          <ScalarProperty Name="MusteriID" ColumnName="MusteriID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="MusteriBorc" ColumnName="MusteriBorc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="stokdbModel.Sales">
+        <MappingFragment StoreEntitySet="Sales">
+          <ScalarProperty Name="SatisID" ColumnName="SatisID" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="UrunFiyat" ColumnName="UrunFiyat" />
+          <ScalarProperty Name="UrunMiktar" ColumnName="UrunMiktar" />
+          <ScalarProperty Name="UrunTarih" ColumnName="UrunTarih" />
+          <ScalarProperty Name="Ver_Pes" ColumnName="Ver_Pes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Saticis">
+      <EntityTypeMapping TypeName="stokdbModel.Saticis">
+        <MappingFragment StoreEntitySet="Saticis">
+          <ScalarProperty Name="SaticiID" ColumnName="SaticiID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stocks">
+      <EntityTypeMapping TypeName="stokdbModel.Stocks">
+        <MappingFragment StoreEntitySet="Stocks">
+          <ScalarProperty Name="StockID" ColumnName="StockID" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="UrunMiktarı" ColumnName="UrunMiktarı" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tedarikcis">
+      <EntityTypeMapping TypeName="stokdbModel.Tedarikcis">
+        <MappingFragment StoreEntitySet="Tedarikcis">
+          <ScalarProperty Name="TedarikciID" ColumnName="TedarikciID" />
+          <ScalarProperty Name="TedarikciAd" ColumnName="TedarikciAd" />
+          <ScalarProperty Name="TedarikciSoyad" ColumnName="TedarikciSoyad" />
+          <ScalarProperty Name="TedarikciBorc" ColumnName="TedarikciBorc" />
+          <ScalarProperty Name="IrsaliyeNo" ColumnName="IrsaliyeNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uruns">
+      <EntityTypeMapping TypeName="stokdbModel.Uruns">
+        <MappingFragment StoreEntitySet="Uruns">
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="UrunFiyat" ColumnName="UrunFiyat" />
+          <ScalarProperty Name="UrunMiktar" ColumnName="UrunMiktar" />
+          <ScalarProperty Name="UrunBarkod" ColumnName="UrunBarkod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

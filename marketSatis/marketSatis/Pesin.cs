@@ -62,7 +62,10 @@ namespace marketSatis
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            listView1.Items.Clear();
+            foreach (ListViewItem itemSelected in listView1.SelectedItems)
+            {
+                listView1.Items.Remove(itemSelected);
+            }
 
             textBox1.Text = "";
             textBox2.Text = "";
@@ -101,9 +104,10 @@ namespace marketSatis
                 Uruns kontrol2 = db.Uruns.AsEnumerable().FirstOrDefault(f => f.UrunID == Convert.ToInt32(listView1.Items[i].SubItems[0].Text));
                 if (kontrol2.UrunMiktar <= 25)
                 {
-                    MessageBox.Show(kontrol2.UrunID + "ID'li ürün stoğu 25'in altına düştü.");
+                    MessageBox.Show(kontrol2.UrunID + "ID'li ürün stoğu 25'den az kaldı.");
                 }
             }
+            MessageBox.Show("Satış yapıldı.");
         }
     }
 }
